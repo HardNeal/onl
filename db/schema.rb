@@ -10,13 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170509074311) do
+ActiveRecord::Schema.define(version: 20170509110339) do
 
   create_table "bazars", force: :cascade do |t|
     t.string   "name"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "containers", force: :cascade do |t|
@@ -37,11 +41,16 @@ ActiveRecord::Schema.define(version: 20170509074311) do
     t.string   "color_product"
     t.string   "size"
     t.string   "phone"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "price"
     t.integer  "user_id"
     t.integer  "container_id"
+    t.string   "image"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["container_id"], name: "index_products_on_container_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end

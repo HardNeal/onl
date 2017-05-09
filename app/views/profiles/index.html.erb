@@ -44,10 +44,16 @@
           <%= link_to '', edit_product_path(p.id), class: "glyphicon glyphicon-cog" %>
           </p>
           <p><h3><%= p.name %></h3></p>
-          <p>
           </h1>
           <b><%= link_to 'Посмотреть товар', product_path(p.id), class: 'btn btn-success', style: 'border-radius: 84px; background-color: rgba(192, 192, 192, 0.23); color: #060606;' %></b>
           </p>
+          <p>
+            <% if p.image == nil? %>
+             <img href="/img/pr.png">
+            <% else %>
+             <%= image_tag p.image.url(:medium) %></p>
+            <% end %>
+          <p>
           <% end %>
         </div>
       </div>

@@ -1,5 +1,12 @@
 <center>
  <%= form_for @product do |f| %>
+
+ 	<% flash.each do |key, value| %>
+     <div class="alert alert-default" role="alert">
+      <div ><%= value %></div>
+     </div>
+    <% end %>
+
       <hr></hr>
 	<div class="field">
 		<%= f.label :Название %><br />
@@ -19,8 +26,10 @@
 	   <%= f.collection_select :container_id, Container.all, :id, :name %>
 	</div>
 	
-
-
+	<div class="field">   
+		<%= f.label :Фото %>
+		<%= f.file_field :image, class: "well" %>
+	</div>
 	<div><b>Картинки разрешеных форматов "jpeg, png, gif"</b></div>
 	
 	<hr></hr>
