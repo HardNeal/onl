@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'products/index'
+
+  get 'products/show'
+
   devise_for :users
-  resources :bazars, :profiles, :homepages
+  resources :bazars, :profiles, :homepages, :products
 
   root 'homepages#index'
 
