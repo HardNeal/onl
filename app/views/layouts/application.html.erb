@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Onlinebazar</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+<nav class="navbar navbar-inverse" style="margin-bottom: 0px;">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" style="line-height: 50px;" href="<%= root_path %>"><b>Logo</b></a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="<%= root_path %>"><h6 class='btn btn-default', style='background-color: rgba(0, 0, 0, 0); color: #ccc;'>Главная</h6> <span class="sr-only">(current)</span></a></li>
+        <li><a href="<%= bazars_path %>"><h6 class='btn btn-default', style='background-color: rgba(0, 0, 0, 0); color: #ccc;'>Рынки</h6></a></li>
+        <li><a href="<%= profiles_path %>"><h6 class='btn btn-default', style='background-color: rgba(0, 0, 0, 0); color: #ccc;'>О нас</h6></a></li>
+        <li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+    <% unless user_signed_in? %>
+        <li><a href="<%= new_user_registration_path %>"><h6 class='btn btn-success', style='background-color: rgba(0, 0, 0, 0); color: #ccc;'>Приобрести место</h6></a></li>
+        <li><a href="<%= new_user_session_path %>"><h6 class='btn btn-success', style='background-color: rgba(0, 0, 0, 0); color: #ccc;'>Вход</h6></a></li>
+      <% else %>
+      <li><a href="<%= profiles_path %>"><h6 class='btn btn-success', style='background-color: rgba(0, 0, 0, 0); color: #ccc;'>Вы вошли как, <%= current_user.name %></h6></a></li>
+        <% end %>
+        <li>
+          <div style="color: rgb(240, 4, 127);"><h5><b>O! </b>: 0709710200</h5></div>
+          <div style="color: #76b62a;"><h5><b>Megacom</b>: 0555901255</h5></div>
+          <div style="color: #feda24;"><h5><b>Beeline</b>: 0777901255</h5></div>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,2 @@
+class Bazar < ApplicationRecord
+end

@@ -1,0 +1,24 @@
+
+<center>
+	<div class="container demo-1" style="width: 100vw; padding-left: 0px; padding-right: 0px;">
+		<div class="content">
+			<div id="large-header" class="large-header">
+				<canvas id="demo-canvas"></canvas>
+				<!-- <h1 class="main-title">Online Bazar</h1> -->
+				<h1 class="main-title"><%= link_to 'Посмотреть рынки', bazars_path, class: 'btn btn-default', style: 'background-color: rgba(0, 0, 0, 0); color: white;'%></h1>
+			</div>
+			<div class="codrops-header">
+				<nav class="codrops-demos">
+					<a class="current-demo" href="<%= root_path %>">Главная</a>
+					<a href="<%= bazars_path %>">Рынки</a>
+					<a href="<%= profiles_path %>">Профиль</a>
+					<a href="index4.html">О нас</a>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<script src="js/TweenLite.min.js"></script>
+	<script src="js/EasePack.min.js"></script>
+	<script src="js/rAF.js"></script>
+	<script src="js/demo-1.js"></script>
+</center>

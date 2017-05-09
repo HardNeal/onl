@@ -1,0 +1,50 @@
+
+  <div class="row">
+
+  <div class="col-sm-3">
+    <div class="panel panel-default" id="cart">
+      <div class="panel-heading">
+        <h3 class="panel-title">Лучшее</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        
+            <li><a href="#">Название</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+        <center><h1> Рынки </h1></center>
+        <hr>
+        <% @bazars.each do |bazar| %>
+
+         <div class="col-sm-6 product-item ">
+          <div class="panel panel-default" style="border-radius: 28px;">
+            <div class="panel-body" style="border-radius: 28px; border: 4px solid silver;">
+            <!-- rgba(10, 40, 109, 0.68) -->
+              <center>
+              <h3 class="thumbnail" style="border: 0px solid #ddd"><%= bazar.name %></h3>
+              <p>
+                <div "><%= link_to 'Посмотреть рынок', bazar_path(bazar.id), class: 'btn btn-success' %></div>
+              </p>
+             </center>
+            </div>
+          </div>
+        </div>
+
+        <% end %>
+    </div>
+  </div>
+  <div class="col-sm-3">
+      <div class="panel panel-default" id="cart">
+        <div class="panel-heading">
+          <h3 class="panel-title">Топ продаж</h3>
+        </div>
+        <div class="panel-body">
+          Разработка
+        </div>
+      </div>
+  </div>
+</div>
