@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     if user_signed_in?
       @product = Product.new(product_params)
       @product.save
-      redirect_to :back
+      redirect_to profiles_path
     else 
       redirect_to new_user_registration_path, notice: "Вы не вошли на сайт"
     end
@@ -57,6 +57,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :price, :image, :desc, :phone, :color_product, :size, :user_id, :bazar_id)
+    params.require(:product).permit(:name, :price, :image, :desc, :phone, :color_product, :size, :user_id, :container_id)
   end
 end
