@@ -4,6 +4,7 @@ class BazarsController < ApplicationController
 	end
 
 	def show
+	 @bazar = Bazar.find(params[:id])
 	end
 
 	def new

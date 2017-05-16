@@ -1,8 +1,12 @@
 class ProductsController < ApplicationController
+    before_action :set_bazar
+
   def index
+    
   end
 
   def show
+    @product = Product.find(params[:id])
   end
 
   def new
@@ -55,6 +59,11 @@ class ProductsController < ApplicationController
   end
 
   private
+
+  def set_bazar
+    @bazar = Bazar.find(params[:bazar_id])
+    @container = Container.find(params[:container_id])
+  end
 
   def product_params
     params.require(:product).permit(:name, :price, :image, :desc, :phone, :color_product, :size, :user_id, :container_id)

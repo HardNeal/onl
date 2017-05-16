@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
+
+  ActiveAdmin.routes(self)
   devise_for :users
-  resources :bazars, :profiles, :homepages, :products
+  resources :profiles, :homepages
 
   root :to => 'homepages#index'
+
+  resources :bazars do 
+  	resources :containers do 
+  		resources :products
+  	end
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

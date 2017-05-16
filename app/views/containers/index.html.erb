@@ -11,7 +11,7 @@
           <h1>
           <p><div class="post-meta"><h4><b>Контейнер <%= p.name %></b></h4></div></p>
           </h1>
-          <a><%= link_to 'Посмотреть товары', bazar_container_path(@bazar.id, p.id), class: "button24", style: 'font-size: 12px;'%>
+          <a><%= link_to 'Посмотреть товары', product_path(p.id), class: "button24", style: 'font-size: 12px;'%>
           </p>
             <img src="/image/magaz.jpg" style="border-radius: 15px;">
           <% end %>

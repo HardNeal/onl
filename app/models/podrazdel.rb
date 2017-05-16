@@ -1,0 +1,2 @@
+class Podrazdel < ApplicationRecord
+end
