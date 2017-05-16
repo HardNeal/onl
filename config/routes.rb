@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   root :to => 'homepages#index'
 
   resources :bazars do 
-  	resources :containers do 
-  		resources :products
+    resources :podrazdels do
+    	resources :containers do 
+    	 resources :products
+      end 
   	end
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512041457) do
+ActiveRecord::Schema.define(version: 20170516045630) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -41,12 +41,20 @@ ActiveRecord::Schema.define(version: 20170512041457) do
     t.string   "name"
     t.integer  "number"
     t.string   "image"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "user_id"
+    t.integer  "podrazdel_id"
+    t.index ["podrazdel_id"], name: "index_containers_on_podrazdel_id"
+    t.index ["user_id"], name: "index_containers_on_user_id"
+  end
+
+  create_table "podrazdels", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "bazar_id"
-    t.integer  "user_id"
-    t.index ["bazar_id"], name: "index_containers_on_bazar_id"
-    t.index ["user_id"], name: "index_containers_on_user_id"
+    t.index ["bazar_id"], name: "index_podrazdels_on_bazar_id"
   end
 
   create_table "products", force: :cascade do |t|

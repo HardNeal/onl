@@ -62,6 +62,7 @@ class ProductsController < ApplicationController
 
   def set_bazar
     @bazar = Bazar.find(params[:bazar_id])
+    @podrazdel = Podrazdel.find(params[:podrazdel_id])
     @container = Container.find(params[:container_id])
   end
 

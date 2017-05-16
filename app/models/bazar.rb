@@ -1,5 +1,5 @@
 class Bazar < ApplicationRecord
-	has_many :containers
+	has_many :podrazdels
 	
 	has_attached_file :image,
         styles: { medium: '300x300>', thumb: '300x230>'},

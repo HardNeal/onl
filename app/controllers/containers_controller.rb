@@ -5,9 +5,11 @@ class ContainersController < ApplicationController
 
   def show
   	@container = Container.find(params[:id])
+    @container = Container.search(params[:search])
   end
 
   def set_bazar
   	@bazar = Bazar.find(params[:bazar_id])
+  	@podrazdel = Podrazdel.find(params[:podrazdel_id])
   end
 end

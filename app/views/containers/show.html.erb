@@ -1,3 +1,10 @@
+<% form_tag projects_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
 <center>
     <div class="row row-category">
       <div class="col-md-3">
@@ -11,7 +18,7 @@
           <h1>
           <p><div class="post-meta"><h4><b><%= p.name %></b></h4></div></p>
           </h1>
-          <a><%= link_to 'Посмотреть товар', bazar_container_product_path(@bazar.id, @container.id, p.id), class: "button24", style: 'font-size: 12px;'%>
+          <a><%= link_to 'Посмотреть товар', bazar_podrazdel_container_product_path(@bazar.id, @podrazdel.id, @container.id, p.id), class: "button24", style: 'font-size: 12px;'%>
           </p>
           <p>
             <% if p.image == nil? %>

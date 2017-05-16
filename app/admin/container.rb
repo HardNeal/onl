@@ -1,6 +1,6 @@
 ActiveAdmin.register Container do
-belongs_to :bazar
-permit_params :name, :bazar_id, :number
+belongs_to :podrazdel
+permit_params :name, :podrazdel_id, :number
 
 	form do |f|
 	  f.inputs do 
@@ -21,9 +21,7 @@ permit_params :name, :bazar_id, :number
 		# 	image_tag place.image.url(:thumb)
 		# end
 		id_column
-		column :bazar do |place|
-			link_to place.bazar.name, admin_bazar_path(place.bazar.id)
-		end
+		column :name
 
 		column :products do |product|
 			link_to('Товары', admin_container_products_path(product.id))

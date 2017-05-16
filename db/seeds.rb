@@ -14,7 +14,9 @@ bazar1 = Bazar.create!(name: 'Дордой рынок')
 bazar1 = Bazar.create!(name: 'Отро-Сай рынок')
 bazar1 = Bazar.create!(name: 'Беш-Саары рынок')
 
-container1 = Container.create!(name: '№1', number: 1, user_id: 1, bazar_id: 1)
+podrazdel1 = Podrazdel.create!(name: 'Европейский рынок', bazar_id: 2)
+
+container1 = Container.create!(name: '№1', number: 1, user_id: 1, podrazdel_id: 1)
 
 product1 = Product.create!(name: 'Кепка Adidas', price: 250, desc: 'Крутая кепа', user_id: 1, container_id: 1 )
 product2 = Product.create!(name: 'Кепка Puma', price: 250, desc: 'Крутая кепа', user_id: 1, container_id: 1 )
