@@ -1,8 +1,14 @@
 class ProductsController < ApplicationController
     before_action :set_bazar
     
+
+
   def index
-    @products = Product.all
+    if params[:search]
+        @products = Product.search(params[:search]).order("created_at DESC")
+      else
+        @products = Product.all.order('created_at DESC')
+    end
   end
 
   def show
@@ -13,7 +19,7 @@ class ProductsController < ApplicationController
     if user_signed_in?
       @product = Product.new
     else
-      redirect_to new_post_registration_path
+      redirect_to new_Product_registration_path
     end
   end
 

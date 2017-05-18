@@ -1,3 +1,7 @@
-<% if @recipes.blank? %>
-  <h4>There are no recipes containing the term <%= params[:search] %>.</h4>
+<% if @products.blank? %>
+  <h4>There are no product containing the term <%= params[:search] %>.</h4>
+<% else %>
+	<% @products.each do |p| %>
+	<%= link_to p.name, bazar_podrazdel_container_product_path(p.container.podrazdel.bazar, p.container.podrazdel, p.container, p) %> <hr>
+	<% end %>
 <% end %>
