@@ -1,24 +1,59 @@
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
 
 <center>
-	<div class="container demo-1" style="width: 100vw; padding-left: 0px; padding-right: 0px;">
+<div >
+  <div class="well" style="width: 34%; margin: 30px; background-color: rgb(253, 209, 160); border: 1px solid #fdd1a0;">
+
+    <h4 class="post-meta" style="font-size: 16px;">
+  
+      <p >Количество рынков: <b style="color: green;"><%= Bazar.all.size %></b></p>
+      <hr style="border-top: 1px solid rgba(238, 238, 238, 0.02);">
+  
+      <p>Количество контейнеров: <b style="color: green; font-size: 20px;"><%= Container.all.size %></b></p>
+       <hr style="border-top: 1px solid rgba(238, 238, 238, 0.02);">
+  
+      <p>Количество товаров: <b style="color: green; font-size: 20px;"><%= Product.all.size %></b></p>
+  
+    </h4>
+  
+  <hr style="border-top: 1px solid rgba(238, 238, 238, 0.02);">
+    <%= link_to 'Посмотреть рынки', new_user_registration_path, class: 'btn btn-success', style: 'color: #5d4444; background-color: rgba(92, 184, 92, 0); border-color: #0c1b0c; border-radius: 13px; font-size: 18px;' %>
+    <p></p>
+   <% if user_signed_in? %>
+    <%= link_to 'Перейти в раздел управление продуктами', profiles_path, class: 'btn btn-success', style: 'color: #5d4444; background-color: rgba(92, 184, 92, 0); border-color: #0c1b0c; border-radius: 13px; font-size: 18px;' %>
+   <% end %>
+
+  </div>
+</div>
+</center>
+
+<center>
 		<div class="content">
 			<div id="large-header" class="large-header">
-				<canvas id="demo-canvas"></canvas>
 				<!-- <h1 class="main-title">Online Bazar</h1> -->
-				<h1 class="main-title"><%= link_to 'Посмотреть рынки', bazars_path, class: 'btn btn-default', style: 'background-color: rgba(0, 0, 0, 0); color: white;'%></h1>
+
+
 			</div>
-			<div class="codrops-header">
+			<p></p>
+			
+			<div class="codrops-header" style="background-color: white; border-radius: 185px; background-color: rgb(253, 209, 160);">
 				<nav class="codrops-demos">
+					<h1 style="font-size:2.5em;">
 					<a class="current-demo" href="<%= root_path %>">Главная</a>
 					<a href="<%= bazars_path %>">Рынки</a>
 					<a href="<%= profiles_path %>">Профиль</a>
 					<a href="index4.html">О нас</a>
+					</h1>
 				</nav>
 			</div>
 		</div>
 	</div>
-	<script src="js/TweenLite.min.js"></script>
-	<script src="js/EasePack.min.js"></script>
-	<script src="js/rAF.js"></script>
-	<script src="js/demo-1.js"></script>
 </center>
+
+<style type="text/css">
+  body {
+  	background: url(image/r.jpg) left top repeat;
+    /*background: url(image/foni.jpg) center top repeat;*/
+  }
+  
+</style>

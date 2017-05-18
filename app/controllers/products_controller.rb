@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
     before_action :set_bazar
-
-  def index
     
+  def index
+    @products = Product.all
   end
 
   def show

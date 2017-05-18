@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :profiles, :homepages
 
   root :to => 'homepages#index'
+  get 'products/search' => 'products#search', as: 'search_products'
 
   resources :bazars do 
     resources :podrazdels do

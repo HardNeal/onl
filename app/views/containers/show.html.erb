@@ -1,10 +1,14 @@
-<% form_tag projects_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
+a
+
+<%= form_tag(bazar_podrazdel_container_products_path(bazar_id: @bazar.id, podrazdel_id: @podrazdel.id, container_id: @container.id), :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
     <%= submit_tag "Search", :name => nil %>
-  </p>
 <% end %>
 
+<p></p>
+<p>
+<%= link_to "Вернуться к контейнерам", bazar_podrazdel_path(@bazar.id, @podrazdel.id), class: 'btn btn-default', style: 'margin-left: 10px;' %>
+</p>
 <center>
     <div class="row row-category">
       <div class="col-md-3">

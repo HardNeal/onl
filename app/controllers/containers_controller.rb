@@ -5,7 +5,6 @@ class ContainersController < ApplicationController
 
   def show
   	@container = Container.find(params[:id])
-    @container = Container.search(params[:search])
   end
 
   def set_bazar

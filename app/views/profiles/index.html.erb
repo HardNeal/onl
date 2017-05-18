@@ -31,7 +31,7 @@
         <hr>
 
           <h5>
-          <%= link_to "Добавить товар в #{container.name}", new_bazar_container_product_path(container.bazar, container), class: 'button7'  %>
+          <%= link_to "Добавить товар в #{container.name}", new_bazar_podrazdel_container_product_path(container.podrazdel.id, container, container.id), class: 'button7'  %>
           
           </h5>
           <% end %>
@@ -46,13 +46,13 @@
         <div class="thumbnail" style="border-radius: 28px; border: 4px solid silver; background: rgba(255, 255, 255, 0.69);">
           <h1>
           <p>
-          <%= link_to '', bazar_container_product_path(p.container.bazar, p.container, p.id), class: "glyphicon glyphicon-remove", method: :delete, data: {confirm: 'Вы уверены?'} %>
+          <%= link_to '', bazar_podrazdel_container_product_path(p.container.podrazdel.id, p.container.podrazdel, p.container, p.id), class: "glyphicon glyphicon-remove", method: :delete, data: {confirm: 'Вы уверены?'} %>
             |  
-          <%= link_to '', edit_bazar_container_product_path(p.container.bazar, p.container, p.id), class: "glyphicon glyphicon-cog" %>
+          <%= link_to '',  edit_bazar_podrazdel_container_product_path(p.container.podrazdel.id, p.container.podrazdel, p.container, p.id), class: "glyphicon glyphicon-cog" %>
           </p>
           <p><div class="post-meta"><h4><b><%= p.name %></b></h4></div></p>
           </h1>
-          <a><%= link_to 'Посмотреть товар', bazar_container_product_path(p.container.bazar, p.container, p.id) , class: "button24" %>
+          <a><%= link_to 'Посмотреть товар', bazar_podrazdel_container_product_path(p.container.podrazdel.id, p.container.podrazdel, p.container, p.id) , class: "button24" %>
           </p>
           <p>
             <% if p.image == nil? %>
