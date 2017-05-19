@@ -1,6 +1,11 @@
 class ContainersController < ApplicationController
 	before_action :set_bazar
   def index
+    if params[:search]
+        @containers = Container.search(params[:search]).order("created_at DESC")
+      else
+        @containers = Container.all.order('created_at DESC')
+    end
   end
 
   def show

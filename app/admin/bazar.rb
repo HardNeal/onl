@@ -18,7 +18,7 @@ ActiveAdmin.register Bazar do
 		id_column
 		column :name
 		column :podrazdels do |bazar|
-			link_to('Категория', admin_bazar_podrazdels_path(bazar.id))
+			link_to('Проход', admin_bazar_podrazdels_path(bazar.id))
 		end
 		# column :encrypted_password => Токен
 	 	 actions

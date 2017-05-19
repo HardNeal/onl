@@ -29,11 +29,11 @@ class BazarsController < ApplicationController
      @bazar = Bazar.find(params[:id])
 	end
 
-  def update
-    @bazar = Bazar.find(params[:id])
-    @bazar.update(bazar_params)
-      redirect_to bazars_path
-  end
+  	def update
+	    @bazar = Bazar.find(params[:id])
+	    @bazar.update(bazar_params)
+	      redirect_to bazars_path
+  	end
 
 	private 
 

@@ -3,11 +3,10 @@ class Container < ApplicationRecord
 	belongs_to :user
 	has_many :products
 	
-	# def self.search(search)
-	#   if search
-	#     self.where("name like ?", "%#{search}%")
-	#   else
-	#     self.all
-	#   end
-	# end
+
+	def self.search(search)
+	  where("name LIKE ?", "%#{search}%") 
+	  # where("content LIKE ?", "%#{search}%")
+	end
+	
 end

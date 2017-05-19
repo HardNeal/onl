@@ -1,9 +1,10 @@
-a
-
-<%= form_tag(bazar_podrazdel_container_products_path(bazar_id: @bazar.id, podrazdel_id: @podrazdel.id, container_id: @container.id), :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Recipes" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
+<hr>
+<center>
+  <%= form_tag(bazar_podrazdel_container_products_path(bazar_id: @bazar.id, podrazdel_id: @podrazdel.id, container_id: @container.id), :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "      Текст для поиска", style: 'width: 17; font-size: 17px;' %>
+      <%= submit_tag "Поиск", :name => nil, class: 'btn btn-default', style: 'border-radius: 10px;' %>
+  <% end %>
+</center>
 
 <p></p>
 <p>

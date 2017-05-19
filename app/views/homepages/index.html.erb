@@ -2,22 +2,22 @@
 
 <center>
 <div >
-  <div class="well" style="width: 34%; margin: 30px; background-color: rgb(253, 209, 160); border: 1px solid #fdd1a0;">
+  <div class="well" style="width: 34%; margin: 30px; background-color: rgb(255, 255, 255); border: 1px solid #fdd1a0;">
 
     <h4 class="post-meta" style="font-size: 16px;">
   
-      <p >Количество рынков: <b style="color: green;"><%= Bazar.all.size %></b></p>
+      <p style="color: black;">Количество рынков: <b style="color: green;"><%= Bazar.all.size %></b></p>
       <hr style="border-top: 1px solid rgba(238, 238, 238, 0.02);">
   
-      <p>Количество контейнеров: <b style="color: green; font-size: 20px;"><%= Container.all.size %></b></p>
+      <p style="color: black;">Количество контейнеров: <b style="color: green; font-size: 20px;"><%= Container.all.size %></b></p>
        <hr style="border-top: 1px solid rgba(238, 238, 238, 0.02);">
   
-      <p>Количество товаров: <b style="color: green; font-size: 20px;"><%= Product.all.size %></b></p>
+      <p style="color: black;">Количество товаров: <b style="color: green; font-size: 20px;"><%= Product.all.size %></b></p>
   
     </h4>
   
   <hr style="border-top: 1px solid rgba(238, 238, 238, 0.02);">
-    <%= link_to 'Посмотреть рынки', new_user_registration_path, class: 'btn btn-success', style: 'color: #5d4444; background-color: rgba(92, 184, 92, 0); border-color: #0c1b0c; border-radius: 13px; font-size: 18px;' %>
+    <%= link_to 'Посмотреть рынки', bazars_path, class: 'btn btn-success', style: 'color: #5d4444; background-color: rgba(92, 184, 92, 0); border-color: #0c1b0c; border-radius: 13px; font-size: 18px;' %>
     <p></p>
    <% if user_signed_in? %>
     <%= link_to 'Перейти в раздел управление продуктами', profiles_path, class: 'btn btn-success', style: 'color: #5d4444; background-color: rgba(92, 184, 92, 0); border-color: #0c1b0c; border-radius: 13px; font-size: 18px;' %>
@@ -36,7 +36,7 @@
 			</div>
 			<p></p>
 			
-			<div class="codrops-header" style="background-color: white; border-radius: 185px; background-color: rgb(253, 209, 160);">
+			<div class="codrops-header" style="background-color: white; border-radius: 185px; background-color: rgb(255, 255, 255);">
 				<nav class="codrops-demos">
 					<h1 style="font-size:2.5em;">
 					<a class="current-demo" href="<%= root_path %>">Главная</a>
@@ -52,7 +52,8 @@
 
 <style type="text/css">
   body {
-  	background: url(image/r.jpg) left top repeat;
+  	/*background: url(image/r.jpg) left top repeat;*/
+    background: url(image/fon1.jpg) center top repeat;
     /*background: url(image/foni.jpg) center top repeat;*/
   }
   

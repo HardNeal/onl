@@ -1,7 +1,33 @@
 <% if @products.blank? %>
   <h4>There are no product containing the term <%= params[:search] %>.</h4>
 <% else %>
-	<% @products.each do |p| %>
-	<%= link_to p.name, bazar_podrazdel_container_product_path(p.container.podrazdel.bazar, p.container.podrazdel, p.container, p) %> <hr>
-	<% end %>
+	<center>
+    <div class="row row-category">
+      <div class="col-md-3">
+<p></p>
+        <% @products.each do |p| %>
+      </div>
+    </div>
+
+    <div class="">
+      <div class="col-md-4">
+        <div class="thumbnail" style="border-radius: 28px; border: 4px solid silver; background: rgba(255, 255, 255, 0.69);">
+          <h1>
+          <p><div class="post-meta"><h4><b><%= link_to p.name, bazar_podrazdel_container_product_path(p.container.podrazdel.bazar, p.container.podrazdel, p.container, p) %></b></h4></div></p>
+          </h1>
+          <a><%= link_to 'Посмотреть товар', bazar_podrazdel_container_product_path(@bazar.id, @podrazdel.id, @container.id, p.id), class: "button24", style: 'font-size: 12px;'%>
+          </p>
+          <p>
+            <% if p.image == nil? %>
+             <img href="/img/pr.png">
+            <% else %>
+             <%= image_tag p.image.url(:medium), style: 'border-radius: 15px;' %></p>
+            <% end %>
+          <p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+</center>
+
 <% end %>
