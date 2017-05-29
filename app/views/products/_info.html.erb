@@ -1,3 +1,7 @@
-<% @product = Product.find(params[:id]) %>
-<p>Имя владельца товара : <b><%= @product.user.name %></b></p>
-<p>Телефон владельца товара:  <b><%= @product.user.phone %></b></p>
+	<% @product = Product.find(params[:id]) %>
+<% if @product.user.nil? %>
+	<b>Владельца еще нет</b>
+<% else %>
+	<p>Имя владельца товара :</p> <b><%= @product.user.name %></b></p> 
+	<p>Телефон владельца товара:  <b><%= @product.user.phone %></b></p>
+<% end %>
