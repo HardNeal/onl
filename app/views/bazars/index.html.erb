@@ -28,7 +28,9 @@
               <p>
                 <div "><%= link_to 'Посмотреть рынок', bazar_path(bazar.id), class: 'btn btn-success' %></div>
               </p>
-              <%= image_tag bazar.image.url(:thumb), style: 'border-radius: 10px;' %>
+              <div class="img_container">
+              <%= image_tag bazar.image.url(), class: "img_rynok",style: 'border-radius: 10px;' %>
+              </div>
              </center>
             </div>
           </div>
