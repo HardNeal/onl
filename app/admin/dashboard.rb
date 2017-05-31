@@ -17,6 +17,7 @@ ActiveAdmin.register_page "Dashboard" do
           table_for Form.order('id desc').limit(10).each do |customer|
             column :name
             column :created_at
+            column :proxod
             column :description
             column :number
             column :container

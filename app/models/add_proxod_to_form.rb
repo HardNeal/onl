@@ -1,0 +1,2 @@
+class AddProxodToForm < ApplicationRecord
+end
