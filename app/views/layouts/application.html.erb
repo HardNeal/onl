@@ -28,13 +28,12 @@
           <li><a href="<%= bazars_path %>"><h6 class='btn btn-default', style='background-color: rgba(0, 0, 0, 0); color: #ccc;'>Рынки</h6></a></li>
           <li><a data-toggle="modal" data-target="#desc"><h6 class='btn btn-default', style='background-color: rgba(0, 0, 0, 0); color: #ccc;'>О нас</h6></a></li>
           <li>
-
-              <%= form_tag(bazar_podrazdel_containers_path(bazar_id: @bazar.id, podrazdel_id: @podrazdel.id), :method => "get", id: "search-form") do %>
+          <div class="search_div">
+              <%= form_tag(bazar_podrazdel_containers_path(:bazar_id, :podrazdel_id)) do %>
               <%= text_field_tag :search, params[:search], placeholder: "      Текст для поиска", style: 'width: 17; font-size: 17px;' %>
-              <%= submit_tag "Поиск", :name => nil, class: 'btn btn-default', style: 'border-radius: 10px;' %>
+              <%= submit_tag "Поиск", :name => nil, class: 'btn btn-success button_submit', style: 'border-radius: 10px;' %>
               <% end %>
-          
-
+            </div>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
