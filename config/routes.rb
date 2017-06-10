@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-
   ActiveAdmin.routes(self)
   devise_for :users
-  resources :profiles, :homepages, :forms
+  resources :profiles, :homepages, :forms, :restorans
 
   root :to => 'homepages#index'
   get 'products/search' => 'products#search', as: 'search_products'

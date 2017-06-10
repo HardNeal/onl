@@ -1,8 +1,15 @@
-<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<div class="video-background">
+    <div class="video-foreground">
+        <iframe src="https://www.youtube.com/embed/pbIjb0P3EQQ?
+controls=0&showinfo=0&rel=0&autoplay=1&loop=1
+&playlist=pbIjb0P3EQQ" allowfullscreen></iframe>
+    </div>
+</div>
 
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
 <center>
-<div >
-  <div class="well" style="width: 34%; margin: 30px; background-color: rgb(255, 255, 255); border: 1px solid #fdd1a0;">
+<div style="display: table; padding: 35px">
+  <div class="well" style="display: table-cell; width: 34%; margin: 30px; background-color: rgba(255, 255, 255, 0.58); border: 1px solid #fdd1a0;">
 
     <h4 class="post-meta" style="font-size: 16px;">
   
@@ -24,6 +31,28 @@
    <% end %>
 
   </div>
+
+  <div class="well" style="display: table-cell; width: 34%; margin: 30px; background-color: rgba(255, 255, 255, 0.58); border: 1px solid #fdd1a0;">
+
+    <h4 class="post-meta" style="font-size: 16px;">
+  
+      <p style="color: black;">Количество заведений: <b style="color: green;">10</b></p>
+      <hr style="border-top: 1px solid rgba(238, 238, 238, 0.02);">
+  
+      <p style="color: black;">Количество ресторанов: <b style="color: green; font-size: 20px;">5</b></p>
+       <hr style="border-top: 1px solid rgba(238, 238, 238, 0.02);">
+      
+      <p style="color: black;">Количество новых заведений: <b style="color: green; font-size: 20px;">3</b></p>
+       <hr style="border-top: 1px solid rgba(238, 238, 238, 0.02);">
+       <p style="color: black;">Количество фастфудных: <b style="color: green; font-size: 20px;">14</b></p>
+       <hr style="border-top: 1px solid rgba(238, 238, 238, 0.02);">
+    </h4>
+  
+  <hr style="border-top: 1px solid rgba(238, 238, 238, 0.02);">
+    <%= link_to 'Посмотреть заведения', restorans_path, class: 'btn btn-success', style: 'color: #5d4444; background-color: rgba(92, 184, 92, 0); border-color: #0c1b0c; border-radius: 13px; font-size: 18px;' %>
+    <p></p>
+ 
+  </div>
 </div>
 </center>
 
@@ -36,7 +65,7 @@
 			</div>
 			<p></p>
 			
-			<div class="codrops-header" style="background-color: white; border-radius: 185px; background-color: rgb(255, 255, 255);">
+			<div class="codrops-header" style="background-color: white; border-radius: 185px; background-color: rgba(255, 255, 255, 0.43);">
 				<nav class="codrops-demos">
 					<h1 style="font-size:2.5em;">
 					<a class="current-demo" href="<%= root_path %>">Главная</a>
@@ -51,10 +80,29 @@
 </center>
 
 <style type="text/css">
-  body {
-  	/*background: url(image/r.jpg) left top repeat;*/
-    /*background: url(image/fon1.jpg) center top repeat;*/
-    /*background: url(image/foni.jpg) center top repeat;*/
-  }
+.video-background {
+    background: #000;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+}
+#vidtop-content {
+    top: 0;
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+    .video-foreground { width: 300%; left: -100%; }
+}
   
 </style>
